@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  tomcat:
+    image: 'bitnami/tomcat:9.0'
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./tomcat_data:/bitnami
+    environment:
+      - TOMCAT_USERNAME=admin
+      - TOMCAT_PASSWORD=tomcat
+
+volumes:
+  tomcat_data:
+    driver: local
