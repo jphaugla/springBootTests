@@ -30,8 +30,8 @@ docker-compose up -d
 
 By default, Tomcat only allows management access using a browser from the same machine as the browser is running on.  Since this is a docker instance, that must be disabled.  To disable this restriction, two identical files must be edited.  These files can both be found in the docker volume so they can be edited on the docker host.  These are the two files:
 ```bash
-   ./springBootTests/tomcat/data/host-manager/META-INF/context.xml
-   ./springBootTests/tomcat/data/manager/META-INF/context.xml
+   ./springBootTests/tomcat_data/tomcat/data/host-manager/META-INF/context.xml
+   ./springBootTests/tomcat_data/tomcat/data/manager/META-INF/context.xml
 ```
 
 The same line must be commented out on each file 
@@ -74,7 +74,7 @@ curl -d '{"id":3, "name":"Milk"}' -H "Content-Type: application/json" -X POST ht
 ```
   * PUT  value in store
 ```bash
-curl -d '{"product":"bread"}' -X PUT -H "Content-Type: application/json" localhost:8080/demo-0.0.1-SNAPSHOT/products/5/
+curl -d '{"name":"bread"}' -X PUT -H "Content-Type: application/json" localhost:8080/demo-0.0.1-SNAPSHOT/products/5/
 ```
 
 
